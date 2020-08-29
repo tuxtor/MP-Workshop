@@ -1,7 +1,7 @@
 version: '3.1'
 services:
     hello:
-        image: hello-ee:1
+        image: hello-ee:2
         restart: always
         environment:
             JAVA_TOOL_OPTIONS: '-Xmx64m'
@@ -10,7 +10,7 @@ services:
         networks:
             - webnet
     home:
-        image: home-ee:1
+        image: home-ee:2
         restart: always
         environment:
             JAVA_TOOL_OPTIONS: '-Xmx64m'

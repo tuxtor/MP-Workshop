@@ -1,28 +1,26 @@
 package com.nabenik.hello.controller;
 
-import com.nabenik.hello.client.HelloResource;
+import com.nabenik.hello.client.HomeResource;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-/**
- *
- * @author airhacks.com
- */
+
 @Path("hello")
-public class PingResource {
+public class HelloResource {
 
     @Inject
     @RestClient
-    HelloResource helloResource;
+    HomeResource homeResource;
 
     @GET
     public String hello() {
-        String respuesta = "No hay lugar como ";
+        String resposta = "Ola desde Jakarta EE Live";
+        var envelope = homeResource.hello();
 
-        return respuesta.concat(helloResource.hello());
+        return resposta.concat(envelope.getDescription());
     }
 
 }
